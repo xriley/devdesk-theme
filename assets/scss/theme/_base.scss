@@ -1,0 +1,647 @@
+/* ============= Base ============= */
+
+/*********** Theme Generic **********/
+html {
+	scroll-behavior: smooth; //Note: some browsers don't support this.
+}
+
+.sticky {
+	position: -webkit-sticky;
+    position: -moz-sticky;
+    position: -ms-sticky;
+    position: -o-sticky;
+    position: sticky;
+    top: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeSpeed;
+    color: $theme-text-color-secondary;
+    line-height: 1.8;
+    font-size: 1.125rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'Poppins', sans-serif;
+	color: $theme-text-color-primary;
+	font-weight: 600;
+}
+
+a {
+	color: $theme-color-primary;
+	@include transition (all 0.2s ease-in-out);
+	&:hover {
+		color: darken($theme-color-primary, 5%);
+		
+	}
+}
+
+
+code {
+	background: $theme-bg-light;
+	color: $theme-text-color-primary;
+	padding: 0.25rem 0.375rem;
+	@include border-radius(0.25rem);
+}
+
+
+
+
+a.theme-link {
+	color: $theme-text-color-primary;
+	text-decoration: underline;
+    -webkit-text-decoration-color: rgba($theme-text-color-primary,0.3);
+    text-decoration-color: rgba($theme-text-color-primary,0.3);
+    &:hover {
+	    color: $theme-color-primary;
+	    -webkit-text-decoration-color: rgba($theme-color-primary,0.8);
+	        text-decoration-color: rgba($theme-color-primary,0.8);
+    }
+}
+
+a.text-link {
+	text-decoration: none;
+	
+	&:hover {
+		text-decoration: underline;
+	}
+}
+
+.btn {
+	font-weight: 600;
+	padding: 1rem 1.75rem;
+	border: none;
+	@include border-radius(2rem);
+	font-size: 1rem;
+	&:hover, &:active, &:focus {
+		text-decoration:none;
+		outline: none;
+		@include transition (all 0.4s ease-in-out);
+	}
+}
+
+
+.btn-primary {
+   background: $theme-color-highlight;
+   color: #fff;
+   &:hover {
+	   background: darken($theme-color-highlight, 5%);
+       color: #fff;
+   }
+}
+
+.btn-secondary {
+	background: darken($theme-text-color-secondary, 5%);
+	color: #fff;
+	&:hover {
+	   background: darken($theme-text-color-secondary, 10%);
+       color: #fff;
+   }
+}
+
+.btn-light {
+	background: $theme-bg-light;
+	color: $theme-color-primary;
+	&:hover {
+		background: $theme-bg-light;
+		color: $theme-color-primary;
+	}
+}
+
+
+
+.btn-success, .btn-warning, .btn-info, .btn-danger {
+	color: #fff;
+	&:hover, &:focus, &:active {
+		color: #fff;
+	}
+}
+
+
+.section-header {
+	.section-title {
+		font-size: 2.5rem;
+		font-weight: 800;
+		line-height: 1.2;
+	}
+	.section-intro {
+		line-height: 1.6;
+		max-width: 800px;
+		margin: 0 auto;
+		font-size: 1.25rem;
+	}
+
+}
+
+
+
+.form-control {
+	padding-top: 0.875rem;
+	padding-bottom: 0.875rem;	
+	border-color: darken($theme-border-color, 10%);
+	@include border-radius(0.5rem);
+	&:focus {
+		box-shadow: none;
+		border-color: $theme-text-color-secondary;
+		outline: none;
+	}
+	&::placeholder {
+	  color: $theme-text-color-light;
+	  opacity: 1; /* Firefox */
+	}
+	
+	&::-ms-input-placeholder { /* Edge 12-18 */
+	  color: $theme-text-color-light;
+	}
+}
+
+.form-label {
+	font-size: 0.875rem;
+	font-weight: 600;
+	color: $theme-text-color-primary;
+	margin-bottom: 0;
+}
+
+
+.error {
+	color: $theme-error;
+}
+
+
+.theme-bg-light {
+	background: $theme-bg-light;
+}
+
+.theme-bg-dark {
+	background: $theme-bg-dark;
+}
+
+.theme-section {
+	padding-top: 5rem;
+	padding-bottom: 5rem;
+}
+
+.theme-callout {
+	padding: 1.5rem;
+	@include border-radius(1rem);
+	margin-bottom: 2rem;
+}
+
+.theme-callout-info {
+	background: lighten($theme-info-color, 32%);
+	color: darken($theme-info-color, 40%);
+}
+
+.theme-callout-success {
+	background: lighten($theme-success-color, 32%);
+	color: darken($theme-success-color, 40%);
+}
+
+.theme-callout-warning {
+	background: lighten($theme-warning-color, 32%);
+	color: darken($theme-warning-color, 40%);
+}
+
+.theme-callout-danger {
+	background: lighten($theme-danger-color, 32%);
+	color: darken($theme-danger-color, 40%);
+}
+
+/*********** Theme Utilities **********/
+.single-col-max {
+	max-width: $single-col-max;
+}
+
+.link-with-arrow {
+	text-decoration: none;
+	display: inline-flex;
+	align-items: center;
+
+	svg {
+		margin-left: 0.375rem;
+		@include transition (all 0.4s ease-in-out);
+	}
+	
+	&:hover {
+		text-decoration: underline;
+		svg {
+			margin-left: 0.6rem;
+		}
+	}
+	
+}
+
+
+.theme-list {
+	li {
+		margin-bottom: 1.5rem;
+		display: flex;
+		align-items: center;
+		line-height: 1.4;
+		
+	}
+	.theme-list-icon {
+		background: $theme-color-primary;
+		font-size: 1rem;
+		color: $theme-text-color-secondary;
+		color: white;
+		padding: 10px;
+		width: 20px;
+		height: 20px;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		@include border-radius(50%);
+		flex-shrink: 0;
+		
+	}
+}
+
+.data-list {
+
+	.number {
+		font-size: 1.75rem;
+		font-weight: 700;
+		color: $theme-text-color-primary;
+		
+		
+		
+	}
+}
+
+.theme-tick-icon {
+    flex-shrink: 0;
+	width: 20px;
+	height: 20px;
+	background-image: url("data:image/svg+xml,%3Csvg width='50px' height='50px' viewBox='0 0 50 50' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Cg id='Page-1' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'%3E%3Cg id='tick-icon'%3E%3Ccircle id='Oval' fill='%2330C4AE' cx='25' cy='25' r='25'%3E%3C/circle%3E%3Cpolyline id='Path-12' stroke='%23FFFFFF' stroke-width='4' stroke-linecap='round' stroke-linejoin='round' points='14 26 18.9055666 35 38 17'%3E%3C/polyline%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+
+.theme-bg-green {
+	background: $theme-color-green;
+}
+.theme-bg-teal {
+	background: $theme-color-teal;
+}
+.theme-bg-yellow {
+	background: $theme-color-yellow;
+}
+.theme-bg-mustard {
+	background: $theme-color-mustard;
+}
+.theme-bg-purple {
+	background: $theme-color-purple;
+}
+.theme-bg-blue {
+	background: $theme-color-blue;
+}
+.theme-bg-red {
+	background: $theme-color-red;
+}
+
+.theme-rating-color {
+	color: $theme-color-yellow;
+}
+
+.news-banner {
+    max-width: $single-col-max;
+	display: inline-block;
+	color: $theme-text-color-primary;
+	font-weight: 500;
+	text-decoration: none !important;
+	font-size: 0.875rem;
+	padding: 0.75rem;
+	background: $theme-bg-light;
+	.title {
+		font-size: 1rem;
+		font-weight: bold;
+	}
+
+	&:hover {
+		@include box-shadow(0 0.5rem 1rem rgba(0,0,0,0.15)!important);
+		color: $theme-text-color-primary;
+		.link-arrow {
+			color: $success;
+		}
+	}
+
+	.badge-new {
+		@include border-radius(40px);
+		padding: 0.5rem 0.75rem;
+		font-weight: bold;
+	}
+
+	.link-arrow {
+	    display: inline-block;
+	    
+	}
+}
+
+/* Header */
+.page-header-wrapper {
+	background: $theme-bg-dark;
+	color: white;
+	position: relative;
+
+}
+
+.page-heading-holder {
+	position: relative;
+	padding-top: 3rem;
+	padding-bottom: 3rem;
+	.page-heading {
+		font-size: 3rem;
+		font-weight: 700;
+		color: #fff;
+	}
+	.page-heading-sub {
+		color: rgba(256, 256, 256, 0.9);
+	}
+    
+}
+.page-header-bg-pattern-holder {
+	position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+	.bg-pattern-top {
+		display: block;
+		width: 100%;
+		height: 150%;
+		left: 0;
+		top: -50%;
+		position: absolute;
+		background: transparent url("../images/patterns/pattern-shape-white.svg") no-repeat left top;
+		background-size: 50%;
+		@include opacity(0.06);
+	}
+	.bg-pattern-bottom {
+		display: block;
+		width: 60%;
+		height: 60%;
+		right: 0px;
+		bottom: -60px;
+		position: absolute;
+		background: transparent url("../images/patterns/pattern-clound-white.svg") no-repeat right bottom;
+		background-size: contain;
+		@include opacity(0.06);
+	}
+}
+
+.site-logo {
+	.navbar-brand {
+		padding: 0;
+	}
+	
+    .logo-text {
+	    color: #fff;
+	    font-size: 1rem;
+	    font-weight: bold;
+	    letter-spacing: 0.05rem;
+    }
+    
+    .logo-icon {
+	    height: 24px;
+	    width: auto;
+    }
+}
+
+
+.navbar {
+	font-size: 1rem;
+	padding: 1rem 0;
+
+	.navbar-toggler {
+		border: none;
+	    padding: 0;
+	    font-size: inherit;
+        &:focus {
+		    outline: none;
+		    box-shadow: none;
+	    }
+	}
+		
+	.nav-link {
+		color: rgba(256, 256, 256, 0.85);
+		color: white;
+		font-weight: 500;
+		
+		&:hover {
+			color: #fff;
+			text-decoration: none;
+		}
+		
+	}
+	
+	.nav-link {
+		padding: 0.75rem;
+		&.active {
+			color: $theme-color-primary;
+		}
+		&.show {
+			color: white;
+		}
+	}
+	
+	.dropdown-menu {
+		border-color: $theme-divider-color;
+		padding: 0;
+		&:after {
+			content: "";
+		    display: block;
+		    width: 0;
+		    height: 0;
+		    border-left: 8px solid transparent;
+		    border-right: 8px solid transparent;
+		    border-bottom: 8px solid #fff;
+		    position: absolute;
+		    right: 2rem;
+		    top: -8px;
+		}
+		&:before {
+			content: "";
+		    display: block;
+		    width: 0;
+		    height: 0;
+		    border-left: 8px solid transparent;
+		    border-right: 8px solid transparent;
+		    border-bottom: 8px solid $theme-divider-color;
+		    position: absolute;
+		    right: 2rem;
+		    top: -9px;
+		}
+		&.show {
+			background: rgba(0, 0, 0, 0.1);
+			.dropdown-item {
+				color: white;
+				
+				&:hover {
+					background: none;
+					color: $theme-color-primary;
+				}
+			}
+		}
+	}
+	.dropdown-item {
+		font-size: 0.875rem;
+		padding: 0.75rem 2rem;
+		&.has-icon {
+			padding-left: 1rem;
+		}
+		.theme-icon-holder {
+			font-size: 0.75rem;
+			padding-top: 0.5rem;
+		}
+		
+		&:hover, &:active {
+			color: $theme-color-primary;
+			background: $theme-bg-light;
+			.theme-icon-holder {
+				background: $theme-color-primary;
+				color: #fff;
+			}
+		}
+		
+	}
+}
+
+
+
+
+/* Footer */
+.footer {
+	background: darken($theme-bg-dark, 5%);
+	color: rgba(256, 256, 256, 0.8);
+	font-size: 0.875rem;
+	.copyright a {
+		color: rgba(256, 256, 256, 0.8);
+		&:hover {
+			color: rgba(256, 256, 256, 1);
+			text-decoration: underline;
+		}
+	}
+
+}
+
+
+/* Animated Hamburger Icon for Bootstrap */
+.navbar-toggler {
+    position: relative;
+}
+
+.navbar-toggler:focus,
+.navbar-toggler:active {
+    outline: 0;
+}
+
+.navbar-toggler span {
+   display: block;
+   background-color: $theme-color-highlight;
+   height: 3px;
+   width: 24px;
+   margin-top: 5px;
+   margin-bottom: 5px;
+   -webkit-transform: rotate(0deg);
+   -moz-transform: rotate(0deg);
+   -o-transform: rotate(0deg);
+   transform: rotate(0deg);
+   position: relative;
+   left: 0;
+   @include opacity(1);
+   @include border-radius(1px);
+}
+
+
+.navbar-toggler:not(.collapsed) span:nth-child(1) {
+    position: absolute;
+    left: 0;
+    top: 0;
+    -webkit-transform: rotate(135deg);
+    -moz-transform: rotate(135deg);
+    -o-transform: rotate(135deg);
+    transform: rotate(135deg);
+    @include opacity(0.9);
+}
+
+.navbar-toggler:not(.collapsed) span:nth-child(2) {
+    height: 12px;
+    visibility: hidden;
+    background-color: transparent;
+}
+
+.navbar-toggler:not(.collapsed) span:nth-child(3) {
+    position: absolute;
+    left: 0;
+    top: 0;
+    -webkit-transform: rotate(-135deg);
+    -moz-transform: rotate(-135deg);
+    -o-transform: rotate(-135deg);
+    transform: rotate(-135deg);
+    opacity: 0.9;
+}
+
+
+// X-Small devices (portrait phones, less than 576px)
+// No media query for `xs` since this is the default in Bootstrap
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) { }
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) { }
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) { 
+	.navbar-expand-lg .navbar-nav .dropdown-menu {
+		right: 0;
+	}
+	/* Make dropdown menu drop on hover */
+	.navbar .dropdown:hover > .dropdown-menu {
+	    display: block;
+	}
+	.navbar  .dropdown > .dropdown-toggle:active {
+	    /*Without this, clicking will make it sticky*/
+	    pointer-events: none;
+	}
+}
+
+
+// `sm` applies to x-small devices (portrait phones, less than 576px)
+@media (max-width: 575.98px) { }
+
+
+// `md` applies to small devices (landscape phones, less than 768px)
+@media (max-width: 767.98px)  {
+	body {
+		font-size: 1rem;
+	}
+	.theme-section {
+		padding-top: 3rem;
+		padding-bottom: 3rem;
+	}
+	
+	.page-heading-holder .page-heading {
+		font-size: 2.25rem;
+	}
+
+ }
+
+// `lg` applies to medium devices (tablets, less than 992px)
+@media (max-width: 991.98px) { 
+	.navbar .dropdown-menu {
+		@include box-shadow(none !important);
+		border: none;
+		&:before, &:after {
+			display: none;
+		}
+	}
+}
+
+
+

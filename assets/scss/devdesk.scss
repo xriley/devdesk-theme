@@ -1,0 +1,67 @@
+/*************************** Theme Colours****************************/
+// Define theme colour scheme
+$theme-color-primary: #5236CB;
+$theme-color-highlight: #53B656;
+
+
+$theme-text-color-primary: #293647;
+$theme-text-color-secondary: lighten($theme-text-color-primary, 20%);
+$theme-text-color-light: lighten($theme-text-color-primary, 40%);
+
+$theme-bg-light: #f5f7fa;
+$theme-bg-dark: $theme-color-primary; 
+
+$theme-border-color:  #efefef;
+$theme-divider-color: #efefef;
+
+$theme-color-new: #5ab66e;
+$theme-error: #EC575B;
+
+
+$single-col-max: 800px;
+
+$theme-success-color: #5cb377;
+$theme-warning-color: #EEBF41;
+$theme-info-color: #5b99ea;
+$theme-danger-color: #d26d69;
+
+
+$theme-color-green: #46d18d;
+$theme-color-yellow: #ffa837;
+$theme-color-mustard: #eebd60;
+$theme-color-teal: #30c4ae;
+$theme-color-blue: #7091dc;
+$theme-color-purple: #9987cb;
+$theme-color-red: #f35b65;
+
+/*************************** Variables Section. *****************************/
+// Create variables to override the default value for variables used in the Bootstrap SCSS files.
+
+$gray-100: lighten($theme-text-color-secondary, 65%);
+$gray-200: lighten($theme-text-color-secondary, 55%);
+$gray-300: lighten($theme-text-color-secondary, 50%);
+$gray-400: lighten($theme-text-color-secondary, 45%);
+$gray-500: lighten($theme-text-color-secondary, 40%);
+$gray-600: lighten($theme-text-color-secondary, 30%);
+$gray-700: lighten($theme-text-color-secondary, 20%);
+$gray-800: lighten($theme-text-color-secondary, 10%);
+$gray-900: $theme-text-color-primary;
+
+/* Override BS5 sass color */
+$primary: $theme-color-primary;
+$secondary: $theme-text-color-secondary;
+$success: $theme-success-color;
+$danger: $theme-danger-color;
+$warning: $theme-warning-color;
+$info: $theme-info-color;
+
+/* Enable negative margin */
+$enable-negative-margins: true;
+
+/*************************** Import Bootstrap  *****************************/
+@import "bootstrap/scss/bootstrap.scss";
+
+
+/*************************** Theme Styles Section ****************************/
+@import "theme/styles.scss";
+
