@@ -4,7 +4,10 @@
 
 **Demo:** https://themes.3rdwavemedia.com/demo/bs5/devdesk/
 
-DevDesk is a **free Bootstrap knowledge base and help centre template** I made for software developers. Built on **Bootstrap 5 and SASS**, it's quick and easy to change the template styling. 
+
+DevDesk is a **free Bootstrap knowledge base and help centre template** I made for software developers. This template is designed to streamline your support process and reduce the need for direct product support. It adopts a clear and simple structure to ensure your customers can find answers quickly and efficiently.
+
+All the source SCSS files are included in the free download. It's really easy to customize the color and design to suit your site’s branding identity.
 
 ## Author & License
 
@@ -30,7 +33,7 @@ If you'd like to **use the template without the attribution link**, you can [buy
 ## Latest Version
 **v1.0** - 2024-07-22
 
-[Changelog](https://themes.3rdwavemedia.com/bootstrap-templates/free/devdesk-free-boo…oftware-products?target=changelog)
+[Changelog](https://themes.3rdwavemedia.com/bootstrap-templates/product/devdesk-free-bootstrap-5-knowledge-base-help-centre-template-for-tech-products/?target=changelog)
 
 
 ## Features
